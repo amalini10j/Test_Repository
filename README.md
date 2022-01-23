@@ -1,5 +1,7 @@
 # COVID-19 for the High-Risk
 
+<img width="749" alt="covid-19" src="https://user-images.githubusercontent.com/88418201/150701093-20516919-e2c9-4890-9eee-7a4367970298.png">
+
 ----------
 ### An analysis of COVID-19 mortality in patients with pre-existing medical conditions.
 
