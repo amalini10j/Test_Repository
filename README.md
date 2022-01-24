@@ -3,7 +3,7 @@
 <img width="749" alt="covid-19" src="https://user-images.githubusercontent.com/88418201/150701093-20516919-e2c9-4890-9eee-7a4367970298.png">
 
 ----------
-### An analysis of COVID-19 mortality in patients with pre-existing medical conditions.
+## An analysis of COVID-19 mortality in patients with pre-existing medical conditions.
 
 ## Project Description 
 
@@ -42,7 +42,7 @@ The following are the members contributing to this project:
         * Amazon Web Services(AWS)
         
     * Connecting to database
-        * Psycopg2
+        * SQLAlchemy
         
     * Analyzing Data
         * Jupyter Notebook
@@ -98,17 +98,22 @@ The dataset will be loaded into a AWS RDS database instance by building a connec
 -----
 ### Data Preprocessing
 
-1. We have used Python pandas to load the raw data  into the database and then export it into a dataframe for dara cleansing so that we can analyze and make better predictions.
-2. Consolidated the data from various sources by removing duplicates to maintain accuracy and to avoid misleading statistics.
+1. We have used Python pandas to load the raw data  into the database and then load it into a dataframe for data cleansing so that we can analyze and make better predictions.
+2. Consolidated the data from various sources by removing duplicate patient id's to maintain accuracy and to avoid misleading statistics.
 3. We have excluded the covid patients records from our analysis whose results were pending.
 4. Formatted the date columns (entry_date,date_symptoms,date_died) into a standard mm-dd-yyyy date format.
 5. Converted the date_died column into categorical data by populating it into a new `survived` column  for better predictions during the Machine Learning phase.
 
 ### Data Loading
 
-We have chosen Amazon Web Services (AWS) relational database system to store data for our project. We are using PostgreSQL; psycopg2 as the adapter to connect the database with our Python code and using SQLAlchemy which is a Python SQL toolkit to facilitate the communication between pandas and the database.
+We have chosen Amazon Web Services (AWS) relational database system to store data for our project. We are using PostgreSQL to connect the database with our Python code and using SQLAlchemy which is a Python SQL toolkit to facilitate the communication between pandas and the database.
 
-Our database is named `covid19_data_analysis` that stores the static data in four different tables, for our use during the course of the project.
+Our database is named `covid19_data_analysis` that stores the static data in four different tables for our use during the course of the project:
+
+        * covid_dataset
+        * clean_covid_dataset
+        * column_description
+        * catalogs
 
 Below is the entity relation diagrams, showing the relationship between the four tables and their columns:
 
